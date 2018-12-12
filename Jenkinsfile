@@ -10,16 +10,11 @@ pipeline {
         }
         stage('Test') {
             steps {
-                parallel(
-                    'primero' : { echo "Primero Tested"
-                    },
-                    'segundo' : { echo "Segundo tested"
-                    },
-                    'tercero' : { echo "Tercero tested"
-                    },
-                    'cuarto' : { echo "Cuarto tested"
-                    }
-                )
+                echo "Primero Tested"
+                echo "Segundo tested"
+                echo "Tercero tested"
+                echo "Cuarto tested"
+  
             }
         }
         stage('Deploy') {
