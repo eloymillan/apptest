@@ -10,13 +10,16 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing...'
-                echo 'Tested'
+                parallel (
+                    'primero' : { echo "Testing..."},
+                    'segundo' : { echo "tested"}
+                )
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying.....';echo 'deployed'
+                
             }
         }
     }
