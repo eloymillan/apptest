@@ -10,9 +10,11 @@ pipeline {
         }
         stage('Test') {
             steps {
-                parallel (
-                    'primero' : { echo "Testing..."},
-                    'segundo' : { echo "tested"}
+                parallel(
+                    'primero' : { echo "Testing..."
+                    },
+                    'segundo' : { echo "tested"
+                    }
                 )
             }
         }
