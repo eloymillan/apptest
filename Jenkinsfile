@@ -6,15 +6,20 @@ pipeline {
             steps {
                 echo 'Building...'
             }
+            steps {
+                echo 'Built'
+            }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
+                echo 'Tested'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying.....'
+                echo 'Deploying.....'&&echo 'Deployed'
+                
             }
         }
     }
