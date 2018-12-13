@@ -5,15 +5,11 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                echo 'Built'
             }
         }
         stage('Test') {
             steps {
                 echo "Primero Tested"
-                echo "Segundo tested"
-                echo "Tercero tested"
-                echo "Cuarto tested"
   
             }
         }
