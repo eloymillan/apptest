@@ -8,6 +8,7 @@ pipeline {
                 sh 'docker stop jenkins-docker-git||true'
                 sh 'docker rm jenkins-docker-git||true'
                 sh 'docker rmi jenkins-with-docker:testgit||true'
+                sh 'docker rm apptest_apache_1 apptest_mysql_1 apptest_php_1||true'
                 echo 'Deleted'
             }
         }
