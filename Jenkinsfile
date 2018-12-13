@@ -18,11 +18,17 @@ pipeline {
                 echo "Created Image"
             }
         }
-        stage('Deploy') {
+        stage('Deploy container') {
             steps {
                 echo 'Deploying.....'
                 sh 'docker run -dit -v /var/run/docker.sock:/var/run/docker.sock --name jenkins-docker-git jenkins-with-docker:testgit'
-                sh 'docker-compose up'
+                echo 'deployed'
+            }
+        }
+        stage('Deploy Docker-Compose') {
+            steps {
+                echo 'Deploying.....'
+                sh 'docker-compose up -d'
                 echo 'deployed'
             }
         }
