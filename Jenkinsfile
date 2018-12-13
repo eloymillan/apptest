@@ -5,9 +5,9 @@ pipeline {
         stage('PreBuild') {
             steps {
                 echo 'Deleting current containers...'
-                sh 'docker stop jenkins-docker-git'
-                sh 'docker rm jenkins-docker-git'
-                sh 'docker rmi jenkins-with-docker:testgit'
+                sh 'docker stop jenkins-docker-git||true'
+                sh 'docker rm jenkins-docker-git||true'
+                sh 'docker rmi jenkins-with-docker:testgit||true'
                 echo 'Deleted'
             }
         }
