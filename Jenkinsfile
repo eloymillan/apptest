@@ -28,7 +28,7 @@ pipeline {
         stage('Testing') {
             steps {
                 echo 'Testing.....'
-                sh 'docker exec -ti jenkins-docker-git pwd'
+                sh 'docker exec jenkins-docker-git pwd'
                 echo 'Tested'
             }
         }
