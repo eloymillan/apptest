@@ -22,6 +22,7 @@ pipeline {
             steps {
                 echo 'Deploying.....'
                 sh 'docker run -dit -v /var/run/docker.sock:/var/run/docker.sock --name jenkins-docker-git jenkins-with-docker:testgit'
+                sh 'docker-compose up'
                 echo 'deployed'
             }
         }

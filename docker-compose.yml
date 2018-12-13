@@ -1,0 +1,20 @@
+version: "3.2"
+services:
+  php:
+    build: './php/'
+    volumes:
+      - ./public_html/:/var/www/html/
+  apache:
+    build: './apache/'
+    depends_on:
+      - php
+      - mysql
+    volumes:
+      - ./public_html/:/var/www/html/
+  mysql:
+    image: mariadb:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+networks:
+  frontend:
+  backend:
