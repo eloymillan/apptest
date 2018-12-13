@@ -7,7 +7,7 @@ pipeline {
                 echo 'Deleting current containers...'
                 docker stop jenkins-docker-git
                 docker rm jenkins-docker-git
-                docker rmi jenkins-with-docker:testgit
+                docker rmi "jenkins-with-docker:testgit"
                 echo 'Deleted'
             }
         }
